@@ -1,9 +1,12 @@
+import Nav from "./components/Layout/Nav"
+import Hero from "./components/Sections/Hero"
 
 const App = () => {
   return (
-    <h2 className=" text-red-600">
-      Hello world
-    </h2>
+    <main className="screen-max-width bg-black">
+      <Nav />
+      <Hero />
+    </main>
   )
 }
 
