@@ -19,7 +19,7 @@ const Hero = () => {
        playsInline={true} 
        muted 
        key={mobile ? smallHeroVideo : heroVideo}
-       className='pointer-events-none'
+       className='pointer-events-none max-md:h-4/6 w-10/12 md:9/12'
        >
          <source 
           src={mobile ? smallHeroVideo : heroVideo}

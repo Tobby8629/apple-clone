@@ -4,7 +4,7 @@ import { navLists } from '../../constants'
 
 const Nav = () => {
   return (
-    <nav className='py-5 max-sm:p-6 flex justify-between items-center'>
+    <nav className='py-5 max-md:p-6 flex justify-between items-center'>
       <img src={appleImg} alt='apple logo'  width={18} height={10} />
       <ul className='max-sm:hidden flex gap-5'>
         {navLists.map((list)=>(
