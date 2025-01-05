@@ -1,11 +1,13 @@
 import Nav from "./components/Layout/Nav"
 import Hero from "./components/Sections/Hero"
+import Highlights from "./components/Sections/Highlights"
 
 const App = () => {
   return (
-    <main className="screen-max-width bg-black">
+    <main className="bg-black">
       <Nav />
       <Hero />
+      <Highlights/>
     </main>
   )
 }

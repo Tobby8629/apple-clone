@@ -8,11 +8,11 @@ const Hero = () => {
   const {mobile} = useResize()
   useGSAP(()=>{
     gsap.to("#title", {opacity: 1, delay: 2.8})
-    gsap.to("#btn", {opacity: 1, delay: 2.8, translateY: mobile ? -20 : 70})
+    gsap.to("#btn", {opacity: 1, delay: 2.8, translateY: mobile ? -20 : 40})
   },[])
 
   return (
-    <header className='nav-height flex flex-col items-center justify-center'>
+    <header className='nav-height bg-black screen-max-width flex flex-col items-center justify-center'>
        <p id="title" className='hero-title'>iPhone 15</p>
        <video 
        autoPlay 
