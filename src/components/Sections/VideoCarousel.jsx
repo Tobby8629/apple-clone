@@ -1,36 +1,59 @@
-import React from 'react'
-import { hightlightsSlides } from '../../constants'
+import { hightlightsSlides } from '../../constants';
 import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 
 const VideoCarousel = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
   const videoRefs = useRef([]);
+  const carouselRef = useRef(null);
+
   const handleVideoEnd = () => {
+    if (!isVisible) return; 
     const nextIndex = (currentVideoIndex + 1) % hightlightsSlides.length;
     setCurrentVideoIndex(nextIndex);
   };
 
   useEffect(() => {
-    if (videoRefs.current[currentVideoIndex]) {
-      videoRefs.current[currentVideoIndex].play();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (carouselRef.current) {
+      observer.observe(carouselRef.current);
     }
-  }, [currentVideoIndex]);
+
+    return () => {
+      if (carouselRef.current) {
+        observer.unobserve(carouselRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
-    gsap.to('#each', {
-      x: `-${currentVideoIndex * 100}%`,
-      duration: 1,
-      ease: 'power2.inOut',
-    });
-  }, [currentVideoIndex]);
+    if (isVisible && videoRefs.current[currentVideoIndex]) {
+      videoRefs.current[currentVideoIndex].play();
+    }
+  }, [isVisible, currentVideoIndex]);
+
+  useEffect(() => {
+    if (isVisible) {
+      gsap.to('#each', {
+        x: `-${currentVideoIndex * 100}%`,
+        duration: 1,
+        ease: 'power2.inOut',
+      });
+    }
+  }, [currentVideoIndex, isVisible]);
 
   return (
-    <div className="wrap flex justify-between">
+    <div ref={carouselRef} className="wrap flex justify-between">
       {hightlightsSlides.map((list, index) => (
         <div key={list.id} id="each">
-          <div className={`video-carousel_container w-full h-full flex items-center bg-black mr-10 sm:mr-20 rounded-3xl`}>
+          <div className="video-carousel_container w-full h-full flex items-center bg-black mr-10 sm:mr-20 rounded-3xl">
             <div className="rounded-3xl">
               <video
                 ref={(el) => (videoRefs.current[index] = el)}
@@ -56,3 +79,4 @@ const VideoCarousel = () => {
 };
 
 export default VideoCarousel;
+ 

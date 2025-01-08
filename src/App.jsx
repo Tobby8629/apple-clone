@@ -1,6 +1,7 @@
 import Nav from "./components/Layout/Nav"
 import Hero from "./components/Sections/Hero"
 import Highlights from "./components/Sections/Highlights"
+import Model from "./components/Sections/Model"
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Nav />
       <Hero />
       <Highlights/>
+      <Model />
     </main>
   )
 }

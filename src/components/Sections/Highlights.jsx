@@ -1,9 +1,9 @@
-import React from 'react'
 import { rightImg, watchImg } from '../../utils'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import VideoCarousel from './VideoCarousel';
+import HeaderText from '../../Reusables/HeaderText';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,7 +15,7 @@ const Highlights = () => {
       stagger: 0.3, 
       scrollTrigger: {
         trigger: ".links", 
-        start: "top 80%", 
+        start: "top 70%", 
         end: "top 50%", 
         toggleActions: "play none none none",
       },
@@ -25,7 +25,7 @@ const Highlights = () => {
     <section className='bg-zinc w-screen overflow-hidden'>
       <div className='screen-max-width common-padding'>
         <div className='md:flex mb-20 flex-wrap justify-between '>
-          <h3 className='links translate-y-5 section-heading font-normal'>Get the highlights.</h3>
+          <HeaderText clas='highlight' title='Get the Highlights.'/>
           <div className='flex gap-7 items-end'>
             <a href='#' className='link links translate-y-5'>
               <span className='mr-2'>Watch the film</span>
