@@ -9,12 +9,12 @@ const FullStory = () => {
     gsap.to(".text",{
       opacity: 1,
       translateY: 0,
-      duration: 1,
+      duration: .5,
       scrollTrigger: {
         trigger: ".text",
         start: "top 80%",
-        ease: "power2.out",
-        end: "top 30%",
+        end: "top -50%",
+        ease: "expo.out",
         toggleActions: "play reverse play reverse"
       }
     })
@@ -46,12 +46,12 @@ const FullStory = () => {
             <ImageScale imag={explore2Img}/>
           </div>
           <div className='text hiw-text translate-y-10 opacity-0 flex max-sm:flex-col md:gap-5 mt-10'>
-            <p className='w-1/2'>
+            <p className='md:w-1/2 mb-5'>
               iPhone 15 Pro is
               <span className="text-white"> the first iPhone to feature an aerospace‑grade titanium design,</span>
               using the same alloy that spacecraft use for missions to Mars.
             </p>
-            <p className='w-1/2'>
+            <p className='md:w-1/2 mb-5'>
               Titanium has one of the best strength‑to‑weight ratios of any metal, making these our
               <span className="text-white"> lightest Pro models ever</span>
               . You’ll notice the difference the moment you pick one up.

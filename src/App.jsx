@@ -1,4 +1,5 @@
 import Nav from "./components/Layout/Nav"
+import Chip from "./components/Sections/Chip"
 import FullStory from "./components/Sections/FullStory"
 import Hero from "./components/Sections/Hero"
 import Highlights from "./components/Sections/Highlights"
@@ -12,6 +13,7 @@ const App = () => {
       <Highlights/>
       <Model />
       <FullStory />
+      <Chip />
     </main>
   )
 }
