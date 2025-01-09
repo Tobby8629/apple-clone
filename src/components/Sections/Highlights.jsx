@@ -15,9 +15,9 @@ const Highlights = () => {
       stagger: 0.3, 
       scrollTrigger: {
         trigger: ".links", 
-        start: "top 70%", 
-        end: "top 50%", 
-        toggleActions: "play none none none",
+        start: "top 80%", 
+        end: "top 10%", 
+        toggleActions: "play reverse play reverse",
       },
     });
   }, []);
