@@ -1,4 +1,3 @@
-import React from 'react'
 import useResize from '../../Reusables/useResize'
 import { heroVideo, smallHeroVideo } from '../../utils'
 import { gsap } from "gsap";
