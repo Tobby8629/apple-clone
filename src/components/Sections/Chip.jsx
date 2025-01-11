@@ -30,15 +30,38 @@ const Chip = () => {
         <p className="hiw-subtitle">It’s here. The biggest redesign in the history of Apple GPUs.</p>
         
         
-        <div className="relative w-full min-h-[50vh] max-sm:max-h-[20vh] mt-10">
-          <img src={frameImg} alt="frame" className="w-full h-full object-contain"/>
-          <video 
-            autoPlay 
-            muted 
-            playsInline 
-            className=" absolute top-0 md:rounded-3xl max-sm:top-[8%] left-0 w-full max-sm:h-5/6 my-auto object-contain">
-            <source src={frameVideo} type="video/mp4"/>
-          </video>
+        <div className="relative w-full mt-10">
+          <img src={frameImg} alt="frame" className="w-full h-full bg-transparent relative object-contain z-10"/>
+          <div className="absolute overflow-hidden p-4 max-sm:p-1 top-[0.9%] max-md:top-[0.6%] max-lg:top-[.5%] left-[0%] w-full  my-auto">
+            <video 
+              autoPlay 
+              muted 
+              playsInline 
+              className="w-full h-full rounded-[60px] max-lg:rounded-[49px] max-sm:rounded-[29px]  object-cover max-sm:object-contain">
+              <source src={frameVideo} type="video/mp4"/>
+            </video>
+          </div>
+        </div>
+        <p className="hiw-text text-sm mt-3 text-center">Honka: Star Rali</p>
+      </div>
+      <div className="pt-10 ">
+        <div>
+          <p className="hiw-text text-gray leading-10 mb-5">
+          A17 Pro is an entirely new class of iPhone chip that delivers our
+          <span className="text-white">best graphics performance by far</span>.
+          </p>
+          <p className="hiw-text text-gray leading-10 mb-5">
+            Mobile 
+            <span className="text-white"> games will look and feel so immersive</span>
+            , with incredibly detailed environments and more realistic characters. And with industry-leading speed and efficiency, A17 Pro takes fast and runs with it.
+          </p>
+        </div>
+        <div>
+          <p>
+            New<br/>
+            <span> Pro-class GPU </span> <br/>
+            with 6 cores
+          </p>
         </div>
       </div>
     </section>
